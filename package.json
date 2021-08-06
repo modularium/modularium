@@ -1,6 +1,6 @@
 {
   "name": "@modularium/discord",
-  "version": "0.1.28",
+  "version": "0.2.0-beta.djs13.1",
   "description": "Create discord.js bots with modules",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@modularium/fox": "^0.1.7",
     "bufferutil": "^4.0.3",
     "colors-cli": "^1.0.27",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.0",
     "fs-extra": "^10.0.0",
     "moment": "^2.29.1",
     "readline": "^1.3.0"
