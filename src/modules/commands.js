@@ -40,5 +40,5 @@ module.exports = async (plugin, config) => {
     plugin.foxLog(plugin.localeString('fox.use', plugin.userWithDiscriminator(msg.author).xb16, msg.guild.name, cmd.xb16 + (args.length > 0 ? ' '.xb16 + args.join(' ').xb16 : '')))
   })
 
-  plugin.bot.on('message', plugin._commandListeners.get('message'))
+  plugin.bot.on('messageCreate', plugin._commandListeners.get('message'))
 }
