@@ -1,4 +1,4 @@
-const { User, Guild, Channel, Role } = require('discord.js-light')
+const { User, Guild, Channel, Role } = require('discord.js')
 
 const splitJoin = (string, split, join) => string.split(split).join(join)
 
