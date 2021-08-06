@@ -25,7 +25,6 @@
   "dependencies": {
     "@modularium/check-update": "^1.0.5",
     "@modularium/fox": "^0.1.7",
-    "bufferutil": "^4.0.3",
     "colors-cli": "^1.0.27",
     "discord.js": "^12.5.3",
     "fs-extra": "^10.0.0",
