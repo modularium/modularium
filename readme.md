@@ -3,3 +3,9 @@
 A discord.js bot created with modules
 
 Read the Docs: _[*click*](https://github.com/modularium/discord/wiki)_
+
+# Installing
+
+```bash
+$ yarn add @modularium/discord
+```
