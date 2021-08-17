@@ -12,19 +12,17 @@ class LocaleManager extends EventEmitter {
   constructor () {
     super()
     this._locales = new Collection()
+    this._locales.toJSON = () => {
+      const json = {}
 
-    const proto = Object.getPrototypeOf(this._locales)
+      const rest = [...this._locales.entries()]
 
-    proto.toJSON = () => {
-      const jsonData = {}
-      const rest = Array.from(this._locales.entries())
       rest.forEach(([key, val]) => {
-        jsonData[key] = val
+        json[key] = val
       })
-      return jsonData
-    }
 
-    Object.setPrototypeOf(this._locales, proto)
+      return json
+    }
   }
 
   add (key, val) {
