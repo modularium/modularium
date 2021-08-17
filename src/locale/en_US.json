@@ -28,5 +28,9 @@
         "noUpdates": "There is no updates",
         "newUpdate": "There is an update: %s. Type in console %s",
         "noSuchVersion": "Current version not found. Maybe you are a developer"
+    },
+    "slashCommands": {
+        "notDeployed": "Command '%s' not deployed yet.",
+        "noExecution": "Command '%s' has not execution."
     }
 }
