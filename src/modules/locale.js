@@ -11,15 +11,20 @@ module.exports = async (plugin, config) => {
   plugin.locale = new LocaleManager()
   plugin.localeString = (key, ...rest) => plugin.locale.localeString(key, ...rest)
 
-  fs.readFile(path.join(__dirname, '../locale/' + config.lang + '.json'), { encoding: 'utf8' }, (err, data) => {
-    if (err) {
-      plugin.err(err.message)
-      return
-    }
-    const jsdata = JSON.parse(data)
-    // jsdata = LocaleManager.flat(jsdata)
-    Object.entries(jsdata).forEach(([key, val]) => {
-      plugin.locale.add(key, val)
+  const load = async p => {
+    return fs.readFile(p, { encoding: 'utf8' }, (err, data) => {
+      if (err) {
+        plugin.err(err.message)
+        return
+      }
+      const jsdata = JSON.parse(data)
+  
+      Object.entries(jsdata).forEach(([key, val]) => {
+        plugin.locale.add(key, val)
+      })
     })
-  })
+  }
+
+  await load(path.join(__dirname, '../locale/' + config.lang + '.json'))
+  await load(path.join(process.cwd(), 'locale/' + config.lang + '.json'))
 }
